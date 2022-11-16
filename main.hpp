@@ -5,9 +5,19 @@
 # include <vector>
 # include <map>
 # include <fstream>
-
 # include <string>
 # include <algorithm>
+
+struct s_location
+{
+    std::string							root; 
+    std::string							index;
+    std::vector<std::string>			methods;
+	std::string							auto_index;
+	std::map<std::string, std::string> 	redir;
+	std::map<std::string, std::string> 	cgi;
+
+};
 
 struct s_parsing
 {
@@ -16,6 +26,11 @@ struct s_parsing
     std::string							name_server;
 	int									size;
 	std::map<std::string, std::string> 	error;
+
+	std::vector<std::string>      		locations;
+
+	std::vector<s_location>      		location;
+
 };
 
 //////////////////// PARSING_1 ///////////////////
